@@ -1,2 +1,2 @@
 # endes1daw2526
-Para próximas pruebas de aprendizaje (con los que se salvaron del diluvio)
+Espacio para realizar pruebas de trabajo colaborativo con los estudiantes durante el mes de enero 2026.
