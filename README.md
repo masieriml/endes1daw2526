@@ -14,6 +14,6 @@ Las deudas domiciliadas son LUZ y AGUA.
 ## Situación actual del proyecto
 El algoritmo está incompleto para el pago del AGUA. Sólo paga la deuda domiciliada en la LUZ.
 ## Misión del estudiante
-Debe proponer una mejora al algoritmo para completar el algoritmo y se pueda pagar también la deuda del AGUA.
+Debe proponer una mejora al algoritmo para completarlo y se pueda pagar también la deuda del AGUA.
 Realizada la mejora, el estudiante pedirá un PUSH REQUEST para que la plataforma GitHub habilite el respectivo COMMIT.
 
