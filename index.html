@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Saldo</title>
+
+	<script>
+        /*
+		function miFunciOn(){
+		document.getElementById("demo").innerHTML = "Párrafo cambiado ahora.";
+		}
+        */
+    var Temp ='';
+    var TimerId = null;
+    var TimerRunning = false;
+    Seconds = 0
+    Minutes = 0
+    Hours = 0
+	
+    function stopClock(){
+        if(TimerRunning) clearTimeout(TimerId); TimerRunning =false;
+    }
+
+    function startClock(){
+        stopClock(); showtime();
+    }
+
+    function myFunction() {
+  setTimeout(function(){
+        alert("Lo sentimos, no podemos mostrar el Saldo Bancario. Nuestras líneas están comunicando. Inténtelo más tarde. Gracias.");
+        }, 3000);
+    }
+
+     function myExpired() {
+        setTimeout(function(){
+        alert("Por su seguridad, su sesión ha expirado. No se ha detectado actividad.");
+        }, 8000);
+        }
+
+    // Adaptación nº 02:    tomada del ejercicio 20201013 Botón Ventana
+    //                      definir la función WinSaldo()
+    function WinSaldo() {
+    msgWindow=window.open("ConsultaSaldo.html", "OpenWindow", "width=650,height=400,scrollbars=yes");
+    }
+
+    </script>
+   
+</head>
+
+
+
+<body onload="myExpired()" bgcolor="pink">
+
+  
+    <h1>Banco Riendo</h1>
+    <h2><i>Su agencia de confianza</i></h2>
+
+
+    <p>Conéctese al Cajero Automático para consultar su saldo bancario. <br> <i>Nota: no cierre el navegador ni se retire sin recibir su comprobante.</i></p>
+    <!-- Adaptación nº 01: deshabilitar myFunction() en el botón y cambiar por habilitar WinSaldo() -->
+    <!-- <button onclick="myFunction()">Conectarse ahora</button> -->
+    <button onclick="WinSaldo()">Conectarse al Cajero</button>
+    <br>
+    <br>
+    <br>
+    
+
+
+<!--
+	<p id="demo">Un párrafo.</p>
+    <button type="button" onclick= "showtime()">Reloj</button>
+-->
+</body>
+<footer>
+    <!--
+    <a href="home.html" onmouseover="window.status='Ir a la página de inicio'; return true;">Inicio</a>
+    <a href="next.html" onmouseover="window.status='Ir a la siguiente página'; return true;">Siguiente</a>
+    -->
+    <a href="#">Inicio</a>
+    <a href="#">Siguiente</a>
+    </footer>
+</html>

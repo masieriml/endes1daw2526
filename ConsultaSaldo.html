@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Servicio de Conexión</title>
+	<script>
+    function newWin() {
+    msgWindow=window.open("AccederCajero.php", "OpenWindow", "width=650,height=400,scrollbars=yes");
+    }
+    
+    var nombreUsuario = " ";
+    var claveCajero = " ";
+    var saludo = "Bienvenido" + nombreUsuario;
+	
+    </script>
+</head>
+<body>
+<!-- <body onload="newWin()"> -->
+	<!--
+	<form action="AccederCajero.php" method="get">
+	<form action="PantallaCajero.html">
+	-->
+	<form action="AccederCajero.php" method="get">
+		<br>
+		<p style="background-color:pink"><i>Favor identificarse para ingresar a la pantalla del Cajero Automático</i></p>
+		<p>Usuario: <input type="text" name="nombreUsuario"></p>
+		<p>Contraseña: <input type="text" name="claveUsuario"></p>
+		<br>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="Ingresar"></p>
+	
+	</form>
+
+</body>
+</html>
