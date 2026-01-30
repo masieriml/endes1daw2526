@@ -4,33 +4,57 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Servicio de Conexión</title>
+
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 	<script>
     function newWin() {
-    msgWindow=window.open("AccederCajero.php", "OpenWindow", "width=650,height=400,scrollbars=yes");
+        msgWindow=window.open("AccederCajero.php", "OpenWindow", "width=650,height=400,scrollbars=yes");
     }
     
     var nombreUsuario = " ";
     var claveCajero = " ";
     var saludo = "Bienvenido" + nombreUsuario;
-	
-    </script>
+	</script>
 </head>
-<body>
+
+<body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex flex-col items-center justify-center font-sans">
+
 <!-- <body onload="newWin()"> -->
-	<!--
-	<form action="AccederCajero.php" method="get">
-	<form action="PantallaCajero.html">
-	-->
-	<form action="AccederCajero.php" method="get">
-		<br>
-		<p style="background-color:pink"><i>Favor identificarse para ingresar a la pantalla del Cajero Automático</i></p>
-		<p>Usuario: <input type="text" name="nombreUsuario"></p>
-		<p>Contraseña: <input type="text" name="claveUsuario"></p>
-		<br>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="submit" value="Ingresar"></p>
+<!--
+<form action="AccederCajero.php" method="get">
+<form action="PantallaCajero.html">
+-->
+
+<!-- Contenedor del formulario con estilo Tailwind -->
+<form action="AccederCajero.php" method="get" 
+	  class="bg-white/80 p-8 rounded-3xl shadow-xl max-w-md w-full flex flex-col gap-4">
 	
-	</form>
+	<p class="bg-pink-100 p-3 rounded-lg italic text-purple-700 text-center">
+		Favor identificarse para ingresar a la pantalla del Cajero Automático
+	</p>
+	<!-- Usuario -->
+	<div class="flex flex-col">
+		<label for="nombreUsuario" class="mb-1 font-semibold text-gray-700">Usuario:</label>
+		<input type="text" name="nombreUsuario" id="nombreUsuario" 
+			   class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+	</div>
+	<!-- Contraseña -->
+	<div class="flex flex-col">
+		<label for="claveUsuario" class="mb-1 font-semibold text-gray-700">Contraseña:</label>
+		<input type="password" name="claveUsuario" id="claveUsuario"
+			   class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+	</div>
+	<!-- Botón enviar -->
+	<div class="flex justify-center mt-4">
+		<input type="submit" value="Ingresar"
+			   class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
+					  hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
+					  text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
+	</div>
+
+</form>
 
 </body>
 </html>

@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cajero Bancario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Bancario</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <script>
+        // Variables de saldo y cargos
+        var decidir = " euros es ahora el saldo de su libreta.";
+        var libreta = 81;
+        var cargoLuz = 45;
+        var cargoAgua = 27;
+        var abono01 = 0;
+        var abono02 = 0;
+        var minus = 0;
+        var saldo = libreta + abono01;
 
-    <!-- Adaptación nº 04:  tomada del ejercicio 20201127 Cajero bancario (Variables y Operadores)
-							Declarar variables y resolver expresiones con operadores
-    -->
-	<script>
-		var decidir = " euros es ahora el saldo de su libreta.";
-		var libreta = 81;
-		var cargoLuz = 45;
-		var cargoAgua = 27;
-		var abono01 = 0;
-		var abono02 = 0;
-		var minus = 0;
-		var saldo = libreta + abono01;
-
-		function myPago(libreta, minus) {
-  		return libreta - minus + decidir;
-		}
-	</script>
+        function myPago(libreta, minus) {
+            return libreta - minus + decidir;
+        }
+    </script>
 </head>
 
-<body onload="document.getElementById('Riendo1').innerHTML =saldo; document.getElementById('Riendo2').innerHTML =cargoLuz;">
-    <!-- Adaptación nº 03:  tomada del ejercicio 20201119 Bombilla y LOG
-							Estampar momento de inicio de sesión al ingresar en la pantalla del cajero
-    -->
-	<p style="background-color:pink"><i>Inicio de sesión: <span id="Riendo0"></span></i></p><br>
-	    <script>
-        var session = new Date();
-        document.getElementById("Riendo0").innerHTML = session;
+<body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex flex-col items-center justify-center font-sans">
+
+    <!-- Contenedor principal -->
+    <main class="bg-white/80 p-8 rounded-3xl shadow-xl text-center max-w-xl w-full space-y-6">
+        <!-- Inicio de sesión -->
+        <p class="bg-pink-100 p-3 rounded-lg">
+            <i>Inicio de sesión: <span id="Riendo0"></span></i>
+        </p>
+
+        <script>
+            var session = new Date();
+            document.getElementById("Riendo0").innerHTML = session;
         </script>
-    
-    <!-- Adaptación nº 05:  tomada del ejercicio 20201119 Bombilla y LOG
-							Escribir párrafos con identidad propia
-    -->
-<p>El Saldo actual de su Libreta Bancaria es: <span id="Riendo1"></span><i> euros.</i></p>
-<hr>
-<p>Por servicios de electricidad tiene pendiente un pago de: <span id="Riendo2"></span><i> euros.</i></p>
 
-<p>¿Desea realizar el pago ahora?</p>
+        <!-- Saldo y cargos -->
+        <p class="text-lg">
+            El Saldo actual de su Libreta Bancaria es: <span id="Riendo1" class="font-semibold"></span><i> euros.</i>
+        </p>
+        <hr class="border-gray-300">
+        <p class="text-lg">
+            Por servicios de electricidad tiene pendiente un pago de: <span id="Riendo2" class="font-semibold"></span><i> euros.</i>
+        </p>
 
-<button onclick="minus=cargoLuz;document.getElementById('resultado').innerHTML =  myPago(libreta, minus);">Sí. Pagar ahora.</button>
+        <script>
+            document.getElementById('Riendo1').innerHTML = saldo;
+            document.getElementById('Riendo2').innerHTML = cargoLuz;
+        </script>
 
-<p id="resultado"></p>
+        <!-- Pregunta de pago -->
+        <p class="text-lg font-medium">¿Desea realizar el pago ahora?</p>
 
+        <!-- Botón de acción -->
+        <button onclick="minus=cargoLuz;document.getElementById('resultado').innerHTML = myPago(libreta, minus);"
+                class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
+                       hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
+                       text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Sí. Pagar ahora.
+        </button>
 
+        <!-- Resultado del pago -->
+        <p id="resultado" class="mt-4 font-semibold text-purple-700"></p>
+    </main>
 </body>
 </html>

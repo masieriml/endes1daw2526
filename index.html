@@ -2,8 +2,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Consulta de Saldo</title>
+    <title>Banco Riendo - Inicio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 
 	<script>
         /*
@@ -50,20 +54,28 @@
 
 
 
-<body onload="myExpired()" bgcolor="pink">
-
+<body onload="myExpired()" class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex flex-col items-center justify-center text-gray-800 font-sans">
   
-    <h1>Banco Riendo</h1>
-    <h2><i>Su agencia de confianza</i></h2>
+    <!-- Cabecera -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold text-white drop-shadow-lg mb-4">Banco Riendo</h1>
+        <h2 class="text-2xl italic text-yellow-100 drop-shadow-md">Su agencia de confianza</h2>
+    </header>
 
-
-    <p>Conéctese al Cajero Automático para consultar su saldo bancario. <br> <i>Nota: no cierre el navegador ni se retire sin recibir su comprobante.</i></p>
-    <!-- Adaptación nº 01: deshabilitar myFunction() en el botón y cambiar por habilitar WinSaldo() -->
-    <!-- <button onclick="myFunction()">Conectarse ahora</button> -->
-    <button onclick="WinSaldo()">Conectarse al Cajero</button>
-    <br>
-    <br>
-    <br>
+    <!-- Contenido principal -->
+    <main class="bg-white/80 p-10 rounded-3xl shadow-xl text-center max-w-xl w-full">
+        <p class="text-lg mb-6">
+            Conéctese al Cajero Automático para consultar su saldo bancario.  
+            <span class="italic text-purple-600">Nota: no cierre el navegador ni se retire sin recibir su comprobante.</span>
+        </p>
+        <!-- Adaptación nº 01: deshabilitar myFunction() en el botón y cambiar por habilitar WinSaldo() -->
+        <!-- <button onclick="myFunction()">Conectarse ahora</button> -->
+        <button onclick="WinSaldo()" 
+                class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 
+                       text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Conectarse al Cajero
+        </button>
+    </main>
     
 
 
@@ -72,12 +84,19 @@
     <button type="button" onclick= "showtime()">Reloj</button>
 -->
 </body>
-<footer>
+<!-- Footer -->
+<footer class="mt-12 text-center space-x-6">
     <!--
     <a href="home.html" onmouseover="window.status='Ir a la página de inicio'; return true;">Inicio</a>
     <a href="next.html" onmouseover="window.status='Ir a la siguiente página'; return true;">Siguiente</a>
     -->
-    <a href="#">Inicio</a>
-    <a href="#">Siguiente</a>
+    <!-- Menu flotante -->
+    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 
+            bg-gradient-to-r from-pink-200 to-purple-200 
+            text-gray-800 rounded-lg shadow-lg px-6 py-3 
+            flex justify-center gap-6 z-50">
+        <a href="#" class="font-semibold hover:underline hover:text-yellow-200 transition">Inicio</a>
+        <a href="#" class="font-semibold hover:underline hover:text-yellow-200 transition">Siguiente</a>
+    </div>
     </footer>
 </html>
