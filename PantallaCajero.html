@@ -22,10 +22,22 @@
 		function myPago(libreta, minus) {
   		return libreta - minus + decidir;
 		}
+
+		function pagarLuz() {
+			saldo = saldo - cargoLuz;
+			document.getElementById('Riendo1').innerHTML = saldo;
+			document.getElementById('resultado').innerHTML = saldo + decidir;
+		}
+
+		function pagarAgua() {
+			saldo = saldo - cargoAgua;
+			document.getElementById('Riendo1').innerHTML = saldo;
+			document.getElementById('resultado').innerHTML = saldo + decidir;
+		}
 	</script>
 </head>
- document.getElementById('Riendo3').innerHTML =cargoElectricidad;
-<body onload="document.getElementById('Riendo1').innerHTML =saldo; document.getElementById('Riendo2').innerHTML =cargoLuz+cargoAgua;">
+
+<body onload="document.getElementById('Riendo1').innerHTML =saldo; document.getElementById('Riendo2').innerHTML =cargoLuz; document.getElementById('Riendo3').innerHTML =cargoAgua;">
     <!-- Adaptación nº 03:  tomada del ejercicio 20201119 Bombilla y LOG
 							Estampar momento de inicio de sesión al ingresar en la pantalla del cajero
     -->
@@ -40,11 +52,15 @@
     -->
 <p>El Saldo actual de su Libreta Bancaria es: <span id="Riendo1"></span><i> euros.</i></p>
 <hr>
-<p>Por servicios de electricidad y agua tiene pendiente un pago de: <span id="Riendo2"></span><i> euros.</i></p>
+<p>Por servicios de electricidad tiene pendiente un pago de: <span id="Riendo2"></span><i> euros.</i></p>
+<p>¿Desea realizar el pago de luz ahora?</p>
+<button onclick="pagarLuz();">Sí. Pagar luz.</button>
 
-<p>¿Desea realizar el pago ahora?</p>
+<hr>
 
-<button onclick="minus=cargoLuz+cargoAgua;document.getElementById('resultado').innerHTML =  myPago(libreta, minus);">Sí. Pagar ahora.</button>
+<p>Por servicios de agua tiene pendiente un pago de: <span id="Riendo3"></span><i> euros.</i></p>
+<p>¿Desea realizar el pago de agua ahora?</p>
+<button onclick="pagarAgua();">Sí. Pagar agua.</button>
 
 <p id="resultado"></p>
 
