@@ -6,11 +6,11 @@
     <title>Consulta de Saldo</title>
 
 	<script>
-        
+        /*
 		function miFunciOn(){
 		document.getElementById("demo").innerHTML = "Párrafo cambiado ahora.";
 		}
-        
+        */
     var Temp ='';
     var TimerId = null;
     var TimerRunning = false;
@@ -44,17 +44,34 @@
     msgWindow=window.open("ConsultaSaldo.html", "OpenWindow", "width=650,height=400,scrollbars=yes");
     }
 
+    // Reloj digital en tiempo real
+    function showTime() {
+        const now = new Date();
+        let h = now.getHours().toString().padStart(2, '0');
+        let m = now.getMinutes().toString().padStart(2, '0');
+        let s = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+        setTimeout(showTime, 1000);
+    }
+    window.onload = function() {
+        myExpired();
+        showTime();
+    }
     </script>
    
 </head>
 
 
 
-<body onload="myExpired()" bgcolor="pink">
+<body bgcolor="pink">
 
   
+
     <h1>Banco Riendo</h1>
     <h2><i>Su agencia de confianza</i></h2>
+    <div style="font-size:1.2em; margin-bottom:10px;">
+        <b>Hora actual:</b> <span id="clock">--:--:--</span>
+    </div>
 
 
     <p>Conéctese al Cajero Automático para consultar su saldo bancario. <br> <i>Nota: no cierre el navegador ni se retire sin recibir su comprobante.</i></p>
@@ -66,15 +83,17 @@
     <br>
     
 
+
+<!--
 	<p id="demo">Un párrafo.</p>
     <button type="button" onclick= "showtime()">Reloj</button>
-
+-->
 </body>
 <footer>
-    
+    <!--
     <a href="home.html" onmouseover="window.status='Ir a la página de inicio'; return true;">Inicio</a>
     <a href="next.html" onmouseover="window.status='Ir a la siguiente página'; return true;">Siguiente</a>
-    
+    -->
     <a href="#">Inicio</a>
     <a href="#">Siguiente</a>
     </footer>
